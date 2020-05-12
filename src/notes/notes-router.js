@@ -48,13 +48,13 @@ notesRouter
   .route('/:note_id')
   .all((req, res, next) => {
     NotesService.getById(req.app.get('db'), req.params.note_id)
-      .then((article) => {
-        if (!article) {
+      .then((note) => {
+        if (!note) {
           return res.status(404).json({
             error: { message: `Note doesn't exist` },
           });
         }
-        res.notes = note;
+        res.note = note;
         next();
       })
       .catch(next);

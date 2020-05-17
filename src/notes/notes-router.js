@@ -11,6 +11,7 @@ const serializeNotes = (note) => ({
   name: note.name,
   folderid: note.folderid,
   content: note.content,
+  modified: note.modified,
 });
 
 notesRouter

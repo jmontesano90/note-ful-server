@@ -73,8 +73,8 @@ notesRouter
       .catch(next);
   })
   .patch(jsonParser, (req, res, next) => {
-    const { name, folderid, content, modified } = req.body;
-    const noteToUpdate = { name, folderid, content, modified };
+    const { name, folderid, content } = req.body;
+    const noteToUpdate = { name, folderid, content };
 
     const numberOfValues = Object.values(noteToUpdate).filter(Boolean).length;
     if (numberOfValues === 0) {

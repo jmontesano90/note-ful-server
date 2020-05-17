@@ -24,8 +24,8 @@ notesRouter
       .catch(next);
   })
   .post(jsonParser, (req, res, next) => {
-    const { name, folderid, content } = req.body;
-    const newNote = { name, folderid, content };
+    const { name, folderid, content, modified } = req.body;
+    const newNote = { name, folderid, content, modified };
 
     for (const [key, value] of Object.entries(newNote)) {
       if (value == null) {
@@ -73,8 +73,8 @@ notesRouter
       .catch(next);
   })
   .patch(jsonParser, (req, res, next) => {
-    const { name, folderid, content } = req.body;
-    const noteToUpdate = { name, folderid, content };
+    const { name, folderid, content, modified } = req.body;
+    const noteToUpdate = { name, folderid, content, modified };
 
     const numberOfValues = Object.values(noteToUpdate).filter(Boolean).length;
     if (numberOfValues === 0) {

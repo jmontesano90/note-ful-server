@@ -24,8 +24,8 @@ notesRouter
       .catch(next);
   })
   .post(jsonParser, (req, res, next) => {
-    const { name, folderid, content, modified } = req.body;
-    const newNote = { name, folderid, content, modified };
+    const { name, folderid, content } = req.body;
+    const newNote = { name, folderid, content };
 
     for (const [key, value] of Object.entries(newNote)) {
       if (value == null) {
